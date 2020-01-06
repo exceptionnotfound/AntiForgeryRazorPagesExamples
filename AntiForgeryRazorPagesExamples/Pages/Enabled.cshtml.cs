@@ -13,10 +13,5 @@ namespace AntiForgeryRazorPagesExamples
         {
 
         }
-
-        public void OnPostInvalid()
-        {
-
-        }
     }
 }

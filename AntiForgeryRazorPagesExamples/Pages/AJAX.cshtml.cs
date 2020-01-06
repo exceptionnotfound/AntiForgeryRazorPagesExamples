@@ -14,11 +14,6 @@ namespace AntiForgeryRazorPagesExamples
         {
 
         }
-
-        public void OnPost()
-        {
-
-        }
         
         public void OnPostScript()
         {
