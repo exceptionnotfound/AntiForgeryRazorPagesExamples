@@ -1,0 +1,24 @@
+﻿@page
+@model AntiForgeryRazorPagesExamples.EnabledModel
+@{
+    ViewData["Title"] = "Enabled";
+}
+
+<h1>Default Behavior</h1>
+
+<p>
+    By default, anti-forgery validation is turned ON for all Razor Pages apps. This page 
+    demonstrates some of the functionality for that situation.</p>
+<hr />
+<form method="post">
+    <p>If you click the below button, the form will be posted and correctly validated.</p>
+    <button type="submit">Go!</button>
+</form>
+<hr />
+<form method="post" asp-antiforgery="false">
+    <p>
+        This form has the antiforgery generation disabled using asp-antiforgery="false".
+        If you click the button below, you will get an error.
+    </p>
+    <button type="submit">Go!</button>
+</form>

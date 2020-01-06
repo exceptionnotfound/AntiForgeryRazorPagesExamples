@@ -1,0 +1,31 @@
+﻿@page
+@model AntiForgeryRazorPagesExamples.DisabledModel
+@{
+    ViewData["Title"] = "Disabled";
+}
+
+<h1>Anti-Forgery Validation OFF</h1>
+
+<p>
+    On this page, anti-forgery validation is OFF, due to the [IgnoreAntiforgeryToken] attribute.
+</p>
+<hr />
+
+<form method="post">
+    <p>
+        This is a standard form, which will generate an anti-forgery token on the page.
+        This token will be posted, but will also be ignored by ASP.NET Core.
+    </p>
+    <button type="submit">Go!</button>
+</form>
+
+<hr />
+
+<form method="post" asp-antiforgery="false">
+    <p>
+        This form has the attribute asp-antiforgery="false".  Consequently, an anti-forgery
+        token will not be generated.  This form will still post normally, because anti-forgery
+        validation is disabled.
+    </p>
+    <button type="submit">Go!</button>
+</form>

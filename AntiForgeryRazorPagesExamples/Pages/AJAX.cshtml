@@ -1,0 +1,25 @@
+﻿@page
+@model AntiForgeryRazorPagesExamples.AjaxModel
+@inject IAntiforgery antiforgery
+@{
+    var token = antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
+    ViewData["Title"] = "Search";
+}
+
+<h1>AJAX Requests</h1>
+
+<p>
+    When you arrived on this page, an AJAX request was issued to the server.  This request
+    included a parameter called __RequestVerificationToken, which was given to the page
+    by injecting IAntiforgery and using a method called GetAndStoreTokens().  Inspect the page
+    for more details.
+</p>
+
+@section Scripts
+{
+<script type="text/javascript">
+    $(function () {
+        $.post("/ajax?handler=script", { __RequestVerificationToken: '@token' });
+    })
+</script>
+}
